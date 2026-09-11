@@ -1,24 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() { 
-    string notas[] = {
+void acordeMaior(string notas[12], int nota) {
+    cout << notas[nota] << " => ";
+    // tonica, terca aumentada, quinta justa
+    cout << notas[nota] << ", " << notas[nota+4] << ", " << notas[nota+7] << endl;
+}
+
+void acordeMenor(string notas[12], int nota) {
+    cout << notas[nota] << "m => ";
+    // tonica, terca menor, quinta justa
+    cout << notas[nota] << ", " << notas[nota+3] << ", " << notas[nota+7] << endl;
+}
+
+int main() {
+    string notas[12] = {
         "A", "A#", "B", "C",
         "C#", "D", "D#", "E",
         "F", "F#", "G", "G#"
     };
 
-    /*
-    for (int i=0; i<12; i++) {
-        cout << notas[i] << endl;
-    }
-    */
+    int nota=0;
+    do {
+        cin >> nota;
+    } while (nota<0 || nota>11);
 
-    // "x maior" = x, x+4, x+7 (tonica, terca aumentada, quinta justa)
-    cout << "Do maior (C) => " << notas[3] << notas[3+4] << notas[3+7] << endl;
-
-    // "y menor" = y, y+3, y+7 (tonica, terca menor, quinta justa)
-    cout << "La menor (Am) => " << notas[0] << notas[0+3] << notas[0+7] << endl; 
+    acordeMaior(notas, nota);
+    acordeMenor(notas, nota);
 
     return 0;
 }
