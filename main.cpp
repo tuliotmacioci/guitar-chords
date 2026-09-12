@@ -2,15 +2,25 @@
 using namespace std;
 
 void acordeMaior(string notas[12], int nota) {
-    cout << notas[nota] << " => ";
-    // tonica, terca aumentada, quinta justa
-    cout << notas[nota] << ", " << notas[nota+4] << ", " << notas[nota+7] << endl;
+    int tonica = nota;
+    int terca_aumentada = (nota+4)%12;
+    int quinta_justa = (nota+7)%12;
+
+    cout << notas[nota] << " => "
+         << notas[tonica] << ", "
+         << notas[terca_aumentada] << ", "
+         << notas[quinta_justa] << endl;
 }
 
 void acordeMenor(string notas[12], int nota) {
-    cout << notas[nota] << "m => ";
-    // tonica, terca menor, quinta justa
-    cout << notas[nota] << ", " << notas[nota+3] << ", " << notas[nota+7] << endl;
+    int tonica = nota;
+    int terca_menor = (nota+3)%12;
+    int quinta_justa = (nota+7)%12;
+
+    cout << notas[nota] << "m => "
+         << notas[tonica] << ", "
+         << notas[terca_menor] << ", "
+         << notas[quinta_justa] << endl;
 }
 
 int main() {
