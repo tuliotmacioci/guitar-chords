@@ -51,13 +51,9 @@ void acordeMenor(string notas[12], int nota) {
 
 int main() {
     string notas[12] = {
-        "A", "A#", "B", "C",
-        "C#", "D", "D#", "E",
-        "F", "F#", "G", "G#"
-    }, notasB[12] = {
         "A", "Bb", "B", "C",
-        "Db", "D", "Eb", "E",
-        "F", "Gb", "G", "Ab"
+        "C#", "D", "Eb", "E",
+        "F", "F#", "G", "Ab"
     };
 
     int nota=0;
@@ -69,12 +65,6 @@ int main() {
         cout << "Escolha uma nota (1-12): ";
         cin >> nota;
         nota--;
-
-        if (nota==1 || nota==6 || nota==8 || nota==11) {
-            for (int i=0; i<12; i++) {
-                notas[i] = notasB[i];
-            }
-        }
 
         int opt=0;
         do {
