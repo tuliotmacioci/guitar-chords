@@ -62,20 +62,41 @@ int main() {
 
     int nota=0;
     do {
-        cin >> nota;
-    } while (nota<0 || nota>11);
-
-    if (nota==1 || nota==6 || nota==8 || nota==11) {
+        // cout << "0. Sair" << endl;
         for (int i=0; i<12; i++) {
-            notas[i] = notasB[i];
+            cout << i+1 << ". " << notas[i] << endl;
         }
-    }
+        cout << "Escolha uma nota (1-12): ";
+        cin >> nota;
+        nota--;
 
-    escalaMaior(notas, nota);
-    escalaMenor(notas, nota);
+        if (nota==1 || nota==6 || nota==8 || nota==11) {
+            for (int i=0; i<12; i++) {
+                notas[i] = notasB[i];
+            }
+        }
 
-    acordeMaior(notas, nota);
-    acordeMenor(notas, nota);
+        int opt=0;
+        do {
+            cout << "[" << notas[nota] << "]\n"
+                // << "0. Voltar" << endl
+                << "1. Escalas" << endl
+                << "2. Acordes" << endl
+                << "Escolha uma opcao (0-2): ";
+            cin >> opt;
+
+            switch (opt) {
+                case 1:
+                    escalaMaior(notas, nota);
+                    escalaMenor(notas, nota);
+                    break;
+                case 2:
+                    acordeMaior(notas, nota);
+                    acordeMenor(notas, nota);
+                default: break;
+            }
+        } while (opt<=0 || opt>2);
+    } while (nota<0 || nota>11);
 
     return 0;
 }
