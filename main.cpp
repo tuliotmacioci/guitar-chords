@@ -54,12 +54,22 @@ int main() {
         "A", "A#", "B", "C",
         "C#", "D", "D#", "E",
         "F", "F#", "G", "G#"
+    }, notasB[12] = {
+        "A", "Bb", "B", "C",
+        "Db", "D", "Eb", "E",
+        "F", "Gb", "G", "Ab"
     };
 
     int nota=0;
     do {
         cin >> nota;
     } while (nota<0 || nota>11);
+
+    if (nota==1 || nota==6 || nota==8 || nota==11) {
+        for (int i=0; i<12; i++) {
+            notas[i] = notasB[i];
+        }
+    }
 
     escalaMaior(notas, nota);
     escalaMenor(notas, nota);
